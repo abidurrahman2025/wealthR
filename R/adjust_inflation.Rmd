@@ -26,7 +26,9 @@ years = Number of years over which inflation adjustment is applied.
 A numeric vector of inflation-adjusted values corresponding to the input time series.
 
 **Example**
-```{r}
+```{r example}
+install.packages("wealthR")
+library(wealthR)
 real_wealth <- adjust_inflation(wealth, inflation_rate = 0.02, years = 30)
 real_wealth
 ```

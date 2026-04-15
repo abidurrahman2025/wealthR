@@ -9,6 +9,20 @@
 #   Test Package:              'Ctrl + Shift + T'
 
 
+#' Calculate projected wealth over time
+#'
+#' Computes the monthly projected balance from an initial principal and regular
+#' monthly contributions at a given annual rate.
+#'
+#' @param principal Numeric scalar. Initial amount invested.
+#' @param monthly Numeric scalar. Monthly contribution amount.
+#' @param rate Numeric scalar. Annual interest rate expressed as a decimal.
+#' @param years Numeric scalar. Projection length in years.
+#'
+#' @return A numeric vector giving the projected balance for each month.
+#'
+#' @examples
+#' calc_wealth(1000, 100, 0.05, 2)
 calc_wealth <- function(principal, monthly, rate, years) {
   if (rate < 0) stop("Rate must be positive.")
 

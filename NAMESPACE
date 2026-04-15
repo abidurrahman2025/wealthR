@@ -1,3 +1,5 @@
 exportPattern("^[[:alpha:]]+")
 importFrom("grDevices", "rgb")
 importFrom("graphics", "grid", "polygon")
+importFrom("graphics", "legend", "lines")
+importFrom("utils", "tail")
