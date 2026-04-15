@@ -1,0 +1,52 @@
+---
+title: "summarize_forecast"
+author: "Abidur Rahman"
+date: "2026-04-15"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+### summarize_forecast()
+
+**Purpose:**  
+Creates a short summary of a forecast result.
+
+**What it does:**  
+This function pulls out the starting value, ending value, total contributions, and gain from a forecast data frame. It is useful for quick reporting.
+
+**Use case:**  
+Use this to summarize investment, savings, or loan results in one clean table.
+
+**Inputs:**  
+- `forecast`: A data frame returned by a forecasting function.
+- `initial`: The starting amount.
+
+**Output:**  
+A one-row data frame with summary values.
+
+**Example:**  
+`summary_forecast(grow_investment(1000, 0.07, 10, 500), 1000)`

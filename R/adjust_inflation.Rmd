@@ -1,0 +1,33 @@
+---
+title: "adjust_inflation"
+author: "Abidur Rahman"
+date: "2026-04-15"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Description:
+Adjusts a time series of nominal asset values to account for inflation, converting amounts into real purchasing power. This allows users to estimate future value in terms of today’s dollars.
+
+**Usage**
+
+adjust_inflation(amounts, inflation_rate, years)
+
+Arguments:
+amounts = Numeric vector of nominal asset values over time.
+inflation_rate = Annual inflation rate (as a decimal).
+years = Number of years over which inflation adjustment is applied.
+
+
+## Value:
+A numeric vector of inflation-adjusted values corresponding to the input time series.
+
+**Example**
+```{r}
+real_wealth <- adjust_inflation(wealth, inflation_rate = 0.02, years = 30)
+real_wealth
+```
+

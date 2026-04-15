@@ -9,11 +9,16 @@ Authors@R: c(
       role = c("aut", "cre")
     )
   )
-Description: Provide users with tools to project savings, investment growth, 
-    and the eroding power of inflation over several decades.
+Description: Provide users with tools to calculate inflation adjustment, savings projection, loan balance simulation, and
+    base R visualizations. Designed for practical personal finance planning
+    and teaching basic forecasting ideas.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.3.3
 URL: https://github.com/abidurrahman2025/wealthR
 BugReports: https://github.com/abidurrahman2025/wealthR/issues
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
