@@ -43,10 +43,10 @@ Then you can run functions such as:
 ```{r example}
 # Calculate growth over 30 years
 raw_wealth <- calc_wealth(principal = 10000, monthly = 500, rate = 0.07, years = 30)
-raw_wealth
+head(raw_wealth,20)
 # Adjust the projection for 3% annual inflation
 real_wealth <-adjust_inflation(amounts = raw_wealth, inflation_rate = 0.03, years = 30)
-real_wealth
+head(real_wealth,20)
 # Compare the nominal vs. inflation-adjusted wealth
 plot_wealth(raw_wealth, title = "Nominal Wealth Projection (7% Return)")
 plot_wealth(real_wealth, title = "Inflation-Adjusted Wealth (3% Inflation)")
