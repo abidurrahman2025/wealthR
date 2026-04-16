@@ -1,5 +1,5 @@
 # Changelog
 
-## wealthR (development version)
+## wealthR 0.0.0.9000
 
 - Initial CRAN submission.
