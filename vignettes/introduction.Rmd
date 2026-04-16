@@ -1,5 +1,5 @@
 ---
-title: "introduction"
+title: "introduction to wealthR"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{introduction}
@@ -13,7 +13,43 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 ```
+# Overview
+
+`wealthR` is a lightweight, zero-dependency R package for simple financial forecasting.  
+It is designed to help users model investment growth, savings plans, inflation effects, and loan repayment using base R only.
+
+The package focuses on small, practical functions that are easy to read, easy to test, and useful in real-world planning.
+
+# What this package does
+
+The package includes tools to:
+
+- simulate long-term investment growth.
+- adjust future values for inflation.
+- project savings over time.
+- forecast loan balances.
+- compare multiple scenarios.
+- create base R visualizations.
+
+# Getting started
+
 
 ```{r setup}
 library(wealthR)
+```
+
+Then you can run functions such as:
+
+```{r example}
+# Calculate growth over 30 years
+raw_wealth <- calc_wealth(principal = 10000, monthly = 500, rate = 0.07, years = 30)
+raw_wealth
+# Adjust the projection for 3% annual inflation
+real_wealth <-adjust_inflation(amounts = raw_wealth, inflation_rate = 0.03, years = 30)
+real_wealth
+# Compare the nominal vs. inflation-adjusted wealth
+plot_wealth(raw_wealth, title = "Nominal Wealth Projection (7% Return)")
+plot_wealth(real_wealth, title = "Inflation-Adjusted Wealth (3% Inflation)")
+
+
 ```
