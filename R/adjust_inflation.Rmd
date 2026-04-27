@@ -8,28 +8,29 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+## Description
 
-## Description:
-Adjusts a time series of nominal asset values to account for inflation, converting amounts into real purchasing power. This allows users to estimate future value in terms of today’s dollars.
+Adjusts a time series of nominal values for inflation by converting them into real purchasing-power terms. The function returns inflation-adjusted values for each observation in the input vector.
 
-**Usage**
+## Usage
 
+```{r}
 adjust_inflation(amounts, inflation_rate, years)
+```
 
-Arguments:
-amounts = Numeric vector of nominal asset values over time.
-inflation_rate = Annual inflation rate (as a decimal).
-years = Number of years over which inflation adjustment is applied.
+## Arguments
 
+- `amounts`: Numeric vector of nominal values over time.
+- `inflation_rate`: Annual inflation rate, expressed as a decimal.
+- `years`: Unused in the current implementation. Included in the signature but not required for the calculation.
 
-## Value:
-A numeric vector of inflation-adjusted values corresponding to the input time series.
+## Value
 
-**Example**
-```{r example}
-install.packages("wealthR")
-library(wealthR)
+A numeric vector of inflation-adjusted values corresponding to the input amounts.
+
+## Example
+
+```{r}
 real_wealth <- adjust_inflation(wealth, inflation_rate = 0.02, years = 30)
 real_wealth
 ```
-

@@ -1,11 +1,13 @@
-#' Adjust amounts for inflation over time
+#' Adjust amounts for inflation
 #'
-#' Converts a monthly series of amounts into inflation-adjusted values using a
-#' monthly inflation rate.
+#' Deflates a sequence of nominal amounts into real amounts using a monthly
+#' inflation rate.
 #'
-#' @param amounts Numeric vector of amounts, one value per month.
-#' @param inflation_rate Numeric scalar. Annual inflation rate expressed as a decimal.
-#' @param years Numeric scalar. Number of years covered by the series.
+#' @param amounts A numeric vector of nominal amounts over time.
+#' @param inflation_rate A numeric scalar. The annual inflation rate as a
+#'   decimal (for example, 0.03 for 3%).
+#' @param years Unused. Included in the original function signature, but not
+#'   needed for the calculation.
 #'
 #' @return A numeric vector of inflation-adjusted amounts.
 #'
@@ -13,7 +15,6 @@
 #' adjust_inflation(c(100, 100, 100), 0.03, 1)
 adjust_inflation <- function(amounts, inflation_rate, years) {
   months <- 1:length(amounts)
-  # Calculate the discount factor for each month
   discount <- (1 + (inflation_rate / 12))^months
   return(amounts / discount)
 }

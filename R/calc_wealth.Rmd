@@ -9,46 +9,30 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+## Description
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+Computes the future value of an investment given an initial principal, ongoing monthly contributions, and a fixed annual rate of return. It returns a vector of balances for each month over the requested time period.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+## Usage
 
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
-
-
-## Description:
-Computes the future value of an investment given an initial principal, ongoing monthly contributions, and a fixed annual rate of return. It simulates the compounded growth over time, returning a vector of balance values for each month.
-
-**Usage**
-
+```{r}
 calc_wealth(principal, monthly, rate, years)
+```
 
-Arguments:
-principal = Initial lump sum investment.
-monthly = Monthly contribution amount.
-rate = Annual rate of return (as a decimal). Must be positive.
-years = Investment duration in years.
+## Arguments
 
+- `principal`: Initial lump-sum investment.
+- `monthly`: Monthly contribution amount.
+- `rate`: Annual nominal rate of return, expressed as a decimal. Must be non-negative.
+- `years`: Investment duration in years.
 
-## Value:
-A numeric vector representing the investment balance at each monthly interval over the specified time period.
+## Value
 
-**Example**
+A numeric vector containing the projected investment balance at each monthly interval.
+
+## Example
+
 ```{r}
 wealth <- calc_wealth(principal = 10000, monthly = 500, rate = 0.06, years = 30)
+wealth
 ```
-

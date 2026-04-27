@@ -8,46 +8,26 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+## Description
+Visualizes projected wealth growth over time using base R graphics. The function displays the wealth trajectory as a line plot.
 
-## R Markdown
+## Usage
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
-
-
-
-## Description:
-Visualizes projected wealth growth over time using base R graphics. The function displays a smooth line plot of the investment trajectory and adds a shaded area to enhance visual clarity.
-
-**Usage**
-
+```{r}
 plot_wealth(data, title = "Wealth Projection")
+```
 
-Arguments:
-data = Numeric vector representing wealth values over time (typically monthly).
+## Arguments
 
-title = Optional plot title (default: "Wealth Projection").
+- `data`: Numeric vector of wealth values over time, typically monthly.
+- `title`: Optional plot title. Defaults to `"Wealth Projection"`.
 
+## Value
 
-## Value:
-No return value; generates a financial trajectory plot directly in the active graphics device.
+Invisibly returns `NULL` after drawing the plot.
 
-**Example**
+## Example
+
 ```{r}
 plot_wealth(real_wealth, title = "Real Wealth Projection (Inflation Adjusted)")
 ```
