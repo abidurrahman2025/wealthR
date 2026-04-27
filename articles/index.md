@@ -2,5 +2,5 @@
 
 ### All vignettes
 
-- [introduction to
-  wealthR](https://abidurrahman2025.github.io/wealthR/articles/introduction.md):
+- [Demo of the wealthR
+  package](https://abidurrahman2025.github.io/wealthR/articles/introduction.md):

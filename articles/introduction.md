@@ -1,4 +1,4 @@
-# introduction to wealthR
+# Demo of the wealthR package
 
 ## Overview
 
