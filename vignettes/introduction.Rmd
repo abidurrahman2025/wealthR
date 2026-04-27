@@ -1,5 +1,5 @@
 ---
-title: "introduction to wealthR"
+title: "Demo of the wealthR package"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{introduction}
