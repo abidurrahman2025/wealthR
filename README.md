@@ -1,50 +1,37 @@
 # WealthR
 
-WealthR is an R package designed to provide lightweight financial forecasting tools. It aims to simplify the process of making predictions in the finance domain, catering to both beginners and experienced users in data science and finance.
+WealthR is a lightweight financial forecasting tool designed to assist users in various aspects of personal finance, including inflation adjustment, savings projection, and wealth visualization.
 
-## Project Description
-WealthR encompasses a variety of functions and methods that assist users in financial analysis, including time series forecasting, risk assessment, and investment optimization.
+## Core Functions
 
-## Features
-- **Time Series Forecasting:** Utilize various statistical models and machine learning algorithms.
-- **Risk Assessment Tools:** Analyze the risk profiles of investment portfolios.
-- **Investment Optimization:** Techniques to optimize asset allocation.
-- **Comprehensive Documentation:** Well-structured guides and resources.
-- **User-Friendly Interface:** Simplified methods for common financial tasks.
+1. **calc_wealth**: This function calculates the future value of investments based on the principal amount and monthly contributions. 
+   - **Usage Example**:
+     ```python
+     principal = 10000  # Initial investment
+     monthly_contribution = 500  # Monthly savings
+     future_value = calc_wealth(principal, monthly_contribution)
+     print(f"Future Value: {future_value}")
+     ```
+
+2. **adjust_inflation**: This function adjusts monetary values for inflation, allowing for more accurate financial planning.
+   - **Usage Example**:
+     ```python
+     value = 1000  # Amount in today's dollars
+     inflation_rate = 0.03  # 3% inflation
+     adjusted_value = adjust_inflation(value, inflation_rate, years=5)
+     print(f"Inflation Adjusted Value: {adjusted_value}")
+     ```
+
+3. **plot_wealth**: This function visualizes the growth of wealth over time, providing insights into savings trajectories.
+   - **Usage Example**:
+     ```python
+     plot_wealth(principal, monthly_contribution, years=10)
+     ```
 
 ## Installation Instructions
-To install WealthR, you can use the following command in R:
-```R
-install.packages('WealthR')
+To install WealthR, use the following command:
+```bash
+pip install wealthR
 ```
 
-## Usage Examples
-Here are some basic examples of how to use the WealthR package:
-
-### Example 1: Time Series Forecasting
-```R
-library(WealthR)
-model <- wealth_forecast(data, method='ARIMA')
-print(model)
-```
-
-### Example 2: Portfolio Risk Assessment
-```R
-library(WealthR)
-portfolio <- c(0.4, 0.6)
-risk <- assess_risk(portfolio)
-print(risk)
-```
-
-## Contribution Guidelines
-Contributions are welcome! Please follow these guidelines:
-1. **Fork the repository.**
-2. **Create a branch for your feature or bug fix.**
-3. **Make your changes.**
-4. **Commit your changes with a clear message.**
-5. **Push your changes back to your fork.**
-6. **Submit a pull request.**
-
-For substantial changes, please create an issue first to discuss what you would like to change. We want to ensure that you're contributing to the project in a meaningful way.
-
-Thank you for your interest in contributing to WealthR!
+WealthR provides a suite of tools that enables users to make informed financial decisions and track their wealth effectively.
