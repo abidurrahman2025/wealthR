@@ -1,5 +1,5 @@
 ---
-title: "introduction"
+title: "Introduction"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{introduction}
@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 ```
-# Overview
+## Overview
 
 `wealthR` is a lightweight, zero-dependency R package for simple financial forecasting.
 
@@ -21,7 +21,7 @@ It is designed to help users model investment growth, savings plans, and inflati
 
 The package focuses on small, practical functions that are easy to read, easy to test, and useful for long-term financial planning.
 
-# What this package does
+## What this package does
 
 The package includes tools to:
 
@@ -30,7 +30,7 @@ The package includes tools to:
 - Robust Calculations: Safely handle edge cases, such as 0 parcent interest rates or inflation.
 - Base R Visualizations: Generate clean, professional wealth trajectory plots without external dependencies.
 
-# Getting started
+## Getting started
 To begin using the package, load it into your environment:
 ```{r setup, include=FALSE}
 library(wealthR)
