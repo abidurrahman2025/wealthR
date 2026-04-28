@@ -60,7 +60,7 @@ real_wealth <- adjust_inflation(
 )
 head(real_wealth, 20)
 ```
-###Visualizing the Trajectory
+### Visualizing the Trajectory
 The plot_wealth function provides a quick way to see the growth curve with a shaded area representing total accumulation.
 ```{r plot_wealth}
 # Compare the nominal vs. inflation-adjusted wealth
