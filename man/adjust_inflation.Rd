@@ -2,24 +2,19 @@
 % Please edit documentation in R/adjust_inflation.R
 \name{adjust_inflation}
 \alias{adjust_inflation}
-\title{Adjust amounts for inflation over time}
+\title{Adjust Values for Inflation}
 \usage{
-adjust_inflation(amounts, inflation_rate, years)
+adjust_inflation(amounts, inflation_rate)
 }
 \arguments{
-\item{amounts}{Numeric vector of amounts, one value per month.}
+\item{amounts}{Numeric vector. The nominal values to be adjusted.}
 
-\item{inflation_rate}{Numeric scalar. Annual inflation rate expressed as a decimal.}
-
-\item{years}{Numeric scalar. Number of years covered by the series.}
+\item{inflation_rate}{Numeric. The annual inflation rate (as a decimal).}
 }
 \value{
-A numeric vector of inflation-adjusted amounts.
+A numeric vector of inflation-adjusted values.
 }
 \description{
-Converts a monthly series of amounts into inflation-adjusted values using a
-monthly inflation rate.
-}
-\examples{
-adjust_inflation(c(100, 100, 100), 0.03, 1)
+Discounts a vector of future nominal values to their present value (purchasing power)
+based on a monthly inflation rate.
 }

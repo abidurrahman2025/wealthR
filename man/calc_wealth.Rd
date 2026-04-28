@@ -2,26 +2,22 @@
 % Please edit documentation in R/calc_wealth.R
 \name{calc_wealth}
 \alias{calc_wealth}
-\title{Calculate projected wealth over time}
+\title{Calculate Wealth Trajectory}
 \usage{
 calc_wealth(principal, monthly, rate, years)
 }
 \arguments{
-\item{principal}{Numeric scalar. Initial amount invested.}
+\item{principal}{Numeric. The starting balance of the account.}
 
-\item{monthly}{Numeric scalar. Monthly contribution amount.}
+\item{monthly}{Numeric. The amount contributed at the end of each month.}
 
-\item{rate}{Numeric scalar. Annual interest rate expressed as a decimal.}
+\item{rate}{Numeric. The annual nominal interest rate (as a decimal, e.g., 0.05 for 5 parcent).}
 
-\item{years}{Numeric scalar. Projection length in years.}
+\item{years}{Numeric. The number of years to project.}
 }
 \value{
-A numeric vector giving the projected balance for each month.
+A numeric vector representing the account balance at each month.
 }
 \description{
-Computes the monthly projected balance from an initial principal and regular
-monthly contributions at a given annual rate.
-}
-\examples{
-calc_wealth(1000, 100, 0.05, 2)
+Calculate Wealth Trajectory
 }

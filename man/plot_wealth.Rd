@@ -2,21 +2,18 @@
 % Please edit documentation in R/plot_wealth.R
 \name{plot_wealth}
 \alias{plot_wealth}
-\title{Plot a wealth projection}
+\title{Plot Wealth Projection}
 \usage{
 plot_wealth(data, title = "Wealth Projection")
 }
 \arguments{
-\item{data}{Numeric vector of wealth values, typically monthly projections.}
+\item{data}{Numeric vector. The wealth values to plot (indexed by month).}
 
-\item{title}{Character string. Plot title.}
+\item{title}{String. The main title of the plot.}
 }
 \value{
-Invisibly returns `NULL`.
+A plot object (base R graphics).
 }
 \description{
-Plots a monthly wealth series against time in years.
-}
-\examples{
-plot_wealth(c(1000, 1100, 1200))
+Generates a line plot with a shaded area representing wealth growth over time.
 }

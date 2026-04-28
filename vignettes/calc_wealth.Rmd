@@ -1,0 +1,39 @@
+---
+title: "calc_wealth"
+author: "Abidur Rahman"
+date: "2026-04-15"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Description
+
+Computes the future value of an investment using a combined formula for a single lump-sum principal and a series of monthly contributions (Ordinary Annuity). It handles edge cases where the interest rate is zero to prevent calculation errors.
+
+## Usage
+
+```{r}
+calc_wealth(principal, monthly, rate, years)
+```
+
+## Arguments
+
+- `principal`: Numeric. Initial lump-sum investment.
+- `monthly`: Numeric. Monthly contribution amount made at the end of each month.
+- `rate`: Numeric. Annual nominal rate of return (as a decimal, e.g., 0.05 for 5%). Must be non-negative.
+- `years`: Numeric. Total duration of the investment.
+
+## Value
+
+A numeric vector representing the account balance at each monthly interval throughout the specified duration.
+
+## Example
+
+```{r}
+# Project wealth with $10,000 start, $500 monthly additions at 6% return for 30 years
+wealth_trajectory <- calc_wealth(principal = 10000, monthly = 500, rate = 0.06, years = 30)
+wealth_trajectory
+```

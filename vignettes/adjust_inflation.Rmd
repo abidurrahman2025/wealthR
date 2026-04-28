@@ -1,0 +1,36 @@
+---
+title: "adjust_inflation"
+author: "Abidur Rahman"
+date: "2026-04-15"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+## Description
+
+Adjusts a sequence of nominal financial values for inflation to reflect their real value in today's purchasing power. This function uses a monthly discount factor based on the provided annual inflation rate.
+
+## Usage
+
+```{r}
+adjust_inflation(amounts, inflation_rate)
+```
+
+## Arguments
+
+- `amounts`: Numeric vector. The nominal future values (typically the output from calc_wealth
+- `inflation_rate`: Numeric. The annual inflation rate (as a decimal, e.g., 0.03 for 3%).
+
+## Value
+
+A numeric vector of the same length as amounts, containing values adjusted for the cumulative effect of inflation.
+
+## Example
+
+```{r}
+# Convert nominal wealth to real terms assuming 2% annual inflation
+real_wealth <- adjust_inflation(amounts = wealth_trajectory, inflation_rate = 0.02)
+real_wealth
+```

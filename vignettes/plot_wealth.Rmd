@@ -1,0 +1,34 @@
+---
+title: "plot_wealth"
+author: "Abidur Rahman"
+date: "2026-04-15"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+## Description
+Generates a visual representation of wealth growth over time. It creates a blue line plot with a light blue shaded area underneath to clearly illustrate the accumulation of assets.
+
+## Usage
+
+```{r}
+plot_wealth(data, title = "Wealth Projection")
+```
+
+## Arguments
+
+- `data`: Numeric vector. The values to be plotted, assumed to be at monthly intervals.
+- `title`: String. The title displayed at the top of the plot. Defaults to `"Wealth Projection"`.
+
+## Value
+
+Displays a plot in the active graphics device and invisibly returns `NULL`
+
+## Example
+
+```{r}
+# Visualize the inflation-adjusted wealth
+plot_wealth(real_wealth, title = "30-Year Real Wealth Projection")
+```
