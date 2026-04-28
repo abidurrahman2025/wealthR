@@ -1,50 +1,55 @@
-# WealthR
+## Overview
 
-WealthR is an R package designed to provide lightweight financial forecasting tools. It aims to simplify the process of making predictions in the finance domain, catering to both beginners and experienced users in data science and finance.
+`wealthR` is a lightweight, zero-dependency R package for simple financial forecasting.
 
-## Project Description
-WealthR encompasses a variety of functions and methods that assist users in financial analysis, including time series forecasting, risk assessment, and investment optimization.
+It is designed to help users model investment growth, savings plans, and inflation effects using base R logic.
 
-## Features
-- **Time Series Forecasting:** Utilize various statistical models and machine learning algorithms.
-- **Risk Assessment Tools:** Analyze the risk profiles of investment portfolios.
-- **Investment Optimization:** Techniques to optimize asset allocation.
-- **Comprehensive Documentation:** Well-structured guides and resources.
-- **User-Friendly Interface:** Simplified methods for common financial tasks.
+The package focuses on small, practical functions that are easy to read, easy to test, and useful for long-term financial planning.
 
-## Installation Instructions
-To install WealthR, you can use the following command in R:
+## What this package does
+
+The package includes tools to:
+
+- Simulate Investment Growth: Model principal and monthly contributions with compounding interest (Ordinary Annuity).
+- Adjust for Inflation: Convert future nominal values into real purchasing-power terms.
+- Robust Calculations: Safely handle edge cases, such as 0 parcent interest rates or inflation.
+- Base R Visualizations: Generate clean, professional wealth trajectory plots without external dependencies.
+
+## Getting started
+To begin using the package, install and load it into your environment:
 ```R
-install.packages('WealthR')
+devtools::install_github("abidurrahman2025/wealthR", build_vignettes = TRUE)
+library(wealthR)
 ```
 
-## Usage Examples
-Here are some basic examples of how to use the WealthR package:
+### Calculate Nominal Growth
 
-### Example 1: Time Series Forecasting
+You can project the future value of an initial investment plus monthly contributions. The calc_wealth function calculates the balance for every month in the period.
+
 ```R
-library(WealthR)
-model <- wealth_forecast(data, method='ARIMA')
-print(model)
+# Calculate growth over 30 years
+raw_wealth <- calc_wealth(
+  principal = 10000,
+  monthly = 500,
+  rate = 0.07,
+  years = 30
+)
+head(raw_wealth, 12)
 ```
-
-### Example 2: Portfolio Risk Assessment
+### Adjust for Inflation
+To see what that money will actually buy in the future, use adjust_inflation. This function now automatically detects the time horizon based on the length of your wealth vector.
 ```R
-library(WealthR)
-portfolio <- c(0.4, 0.6)
-risk <- assess_risk(portfolio)
-print(risk)
+# Adjust the projection for 3% annual inflation
+real_wealth <- adjust_inflation(
+  amounts = raw_wealth,
+  inflation_rate = 0.03
+)
+head(real_wealth, 20)
 ```
-
-## Contribution Guidelines
-Contributions are welcome! Please follow these guidelines:
-1. **Fork the repository.**
-2. **Create a branch for your feature or bug fix.**
-3. **Make your changes.**
-4. **Commit your changes with a clear message.**
-5. **Push your changes back to your fork.**
-6. **Submit a pull request.**
-
-For substantial changes, please create an issue first to discuss what you would like to change. We want to ensure that you're contributing to the project in a meaningful way.
-
-Thank you for your interest in contributing to WealthR!
+### Visualizing the Trajectory
+The plot_wealth function provides a quick way to see the growth curve with a shaded area representing total accumulation.
+```R
+# Compare the nominal vs. inflation-adjusted wealth
+plot_wealth(raw_wealth, title = "Nominal Wealth Projection")
+plot_wealth(real_wealth, title = "Real Wealth Projection")
+```
