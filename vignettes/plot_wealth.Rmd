@@ -1,21 +1,27 @@
 ---
-title: "plot_wealth"
-author: "Abidur Rahman"
-date: "2026-04-15"
-output: html_document
+title: "Plotting Wealth"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Plotting Wealth}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(wealthR)
 ```
 ## Description
 Generates a visual representation of wealth growth over time. It creates a blue line plot with a light blue shaded area underneath to clearly illustrate the accumulation of assets.
 
 ## Usage
-
-```{r}
-plot_wealth(data, title = "Wealth Projection")
-```
+plot_wealth(data, title)
 
 ## Arguments
 
@@ -29,6 +35,7 @@ Displays a plot in the active graphics device and invisibly returns `NULL`
 ## Example
 
 ```{r}
+my_saving <- calc_wealth(1000, 500, 0.08, 20)
 # Visualize the inflation-adjusted wealth
-plot_wealth(real_wealth, title = "30-Year Real Wealth Projection")
+plot_wealth(my_saving, title = "20-Year Real Wealth Projection")
 ```

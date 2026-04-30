@@ -1,22 +1,28 @@
 ---
-title: "adjust_inflation"
-author: "Abidur Rahman"
-date: "2026-04-15"
-output: html_document
+title: "Adjusting for Inflation"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Adjusting for Inflation}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(wealthR)
 ```
 ## Description
 
 Adjusts a sequence of nominal financial values for inflation to reflect their real value in today's purchasing power. This function uses a monthly discount factor based on the provided annual inflation rate.
 
 ## Usage
-
-```{r}
 adjust_inflation(amounts, inflation_rate)
-```
 
 ## Arguments
 
@@ -28,9 +34,9 @@ adjust_inflation(amounts, inflation_rate)
 A numeric vector of the same length as amounts, containing values adjusted for the cumulative effect of inflation.
 
 ## Example
-
 ```{r}
-# Convert nominal wealth to real terms assuming 2% annual inflation
-real_wealth <- adjust_inflation(amounts = wealth_trajectory, inflation_rate = 0.02)
-real_wealth
+# Define 'viz_data' to avoid conflict with the data() function
+viz_data <- wealthR::calc_wealth(5000, 200, 0.07, 20)
+
+plot_wealth(viz_data, title = "30-Year Real Wealth Projection")
 ```

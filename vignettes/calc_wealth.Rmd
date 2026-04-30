@@ -1,23 +1,28 @@
 ---
-title: "calc_wealth"
-author: "Abidur Rahman"
-date: "2026-04-15"
-output: html_document
+title: "Projecting Wealth"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Projecting Wealth}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
 ```
 
+```{r setup}
+library(wealthR)
+```
 ## Description
 
 Computes the future value of an investment using a combined formula for a single lump-sum principal and a series of monthly contributions (Ordinary Annuity). It handles edge cases where the interest rate is zero to prevent calculation errors.
 
 ## Usage
-
-```{r}
 calc_wealth(principal, monthly, rate, years)
-```
 
 ## Arguments
 
