@@ -1,6 +1,7 @@
-# Plot a wealth projection
+# Plot Wealth Projection
 
-Plots a monthly wealth series against time in years.
+Generates a line plot with a shaded area representing wealth growth over
+time.
 
 ## Usage
 
@@ -12,18 +13,12 @@ plot_wealth(data, title = "Wealth Projection")
 
 - data:
 
-  Numeric vector of wealth values, typically monthly projections.
+  Numeric vector. The wealth values to plot (indexed by month).
 
 - title:
 
-  Character string. Plot title.
+  String. The main title of the plot.
 
 ## Value
 
-Invisibly returns \`NULL\`.
-
-## Examples
-
-``` r
-plot_wealth(c(1000, 1100, 1200))
-```
+A plot object (base R graphics).

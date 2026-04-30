@@ -1,7 +1,6 @@
-# Calculate projected wealth over time
+# Calculate Wealth Trajectory
 
-Computes the monthly projected balance from an initial principal and
-regular monthly contributions at a given annual rate.
+Calculate Wealth Trajectory
 
 ## Usage
 
@@ -13,29 +12,21 @@ calc_wealth(principal, monthly, rate, years)
 
 - principal:
 
-  Numeric scalar. Initial amount invested.
+  Numeric. The starting balance of the account.
 
 - monthly:
 
-  Numeric scalar. Monthly contribution amount.
+  Numeric. The amount contributed at the end of each month.
 
 - rate:
 
-  Numeric scalar. Annual interest rate expressed as a decimal.
+  Numeric. The annual nominal interest rate (as a decimal, e.g., 0.05
+  for 5 parcent).
 
 - years:
 
-  Numeric scalar. Projection length in years.
+  Numeric. The number of years to project.
 
 ## Value
 
-A numeric vector giving the projected balance for each month.
-
-## Examples
-
-``` r
-calc_wealth(1000, 100, 0.05, 2)
-#>  [1] 1104.167 1208.767 1313.804 1419.278 1525.192 1631.547 1738.345 1845.588
-#>  [9] 1953.278 2061.417 2170.006 2279.047 2388.543 2498.496 2608.906 2719.777
-#> [17] 2831.109 2942.905 3055.167 3167.897 3281.097 3394.768 3508.913 3623.533
-```
+A numeric vector representing the account balance at each month.
