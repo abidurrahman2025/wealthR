@@ -12,11 +12,11 @@ calc_wealth(principal, monthly, rate, years)
 
 - principal:
 
-  Numeric. The starting balance of the account.
+  Numeric. Your starting balance (how much money you have now)
 
 - monthly:
 
-  Numeric. The amount contributed at the end of each month.
+  Numeric. The amount you plan to save/add every month.
 
 - rate:
 
@@ -25,8 +25,8 @@ calc_wealth(principal, monthly, rate, years)
 
 - years:
 
-  Numeric. The number of years to project.
+  Numeric. How many years into the future you want to project.
 
 ## Value
 
-A numeric vector representing the account balance at each month.
+A list of monthly balances over the specified time.

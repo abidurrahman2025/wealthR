@@ -13,7 +13,8 @@ plot_wealth(data, title = "Wealth Projection")
 
 - data:
 
-  Numeric vector. The wealth values to plot (indexed by month).
+  Numeric vector. The series of monthly balances (usually from
+  calc_wealth).
 
 - title:
 
