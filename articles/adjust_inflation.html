@@ -76,7 +76,8 @@
 <p>Adjusts a sequence of nominal financial values for inflation to
 reflect their real value in today’s purchasing power. This function uses
 a monthly discount factor based on the provided annual inflation
-rate.</p>
+rate.The function assumes the first amount is next month. It uses the
+Present Value (PV) formula, specifically the Discount Factor.</p>
 </div>
 <div class="section level2">
 <h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
@@ -88,8 +89,8 @@ rate.</p>
 </h2>
 <ul>
 <li>
-<code>amounts</code>: Numeric vector. The nominal future values
-(typically the output from calc_wealth</li>
+<code>amounts</code>: Numeric vector. The nominal future values. The
+function assumes the first amount is next month.</li>
 <li>
 <code>inflation_rate</code>: Numeric. The annual inflation rate (as
 a decimal, e.g., 0.03 for 3%).</li>
@@ -105,11 +106,17 @@ adjusted for the cumulative effect of inflation.</p>
 <h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
 </h2>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Define 'viz_data' to avoid conflict with the data() function</span></span>
-<span><span class="va">viz_data</span> <span class="op">&lt;-</span> <span class="fu">wealthR</span><span class="fu">::</span><span class="fu"><a href="../reference/calc_wealth.html">calc_wealth</a></span><span class="op">(</span><span class="fl">5000</span>, <span class="fl">200</span>, <span class="fl">0.07</span>, <span class="fl">20</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="../reference/plot_wealth.html">plot_wealth</a></span><span class="op">(</span><span class="va">viz_data</span>, title <span class="op">=</span> <span class="st">"30-Year Real Wealth Projection"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="adjust_inflation_files/figure-html/unnamed-chunk-2-1.png" class="r-plt" alt="" width="700"></p>
+<code class="sourceCode R"><span><span class="va">nominal_values</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fl">10000</span>, <span class="fl">60</span><span class="op">)</span> <span class="co"># 5 years of monthly data</span></span>
+<span><span class="va">real_values</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/adjust_inflation.html">adjust_inflation</a></span><span class="op">(</span><span class="va">nominal_values</span>, inflation_rate <span class="op">=</span> <span class="fl">0.03</span><span class="op">)</span></span>
+<span><span class="va">real_values</span></span>
+<span><span class="co">#&gt;  [1] 9975.062 9950.187 9925.373 9900.622 9875.932 9851.304 9826.737 9802.231</span></span>
+<span><span class="co">#&gt;  [9] 9777.787 9753.403 9729.081 9704.819 9680.617 9656.476 9632.395 9608.374</span></span>
+<span><span class="co">#&gt; [17] 9584.413 9560.512 9536.670 9512.888 9489.165 9465.501 9441.896 9418.351</span></span>
+<span><span class="co">#&gt; [25] 9394.863 9371.435 9348.065 9324.753 9301.499 9278.303 9255.165 9232.085</span></span>
+<span><span class="co">#&gt; [33] 9209.062 9186.097 9163.189 9140.338 9117.545 9094.807 9072.127 9049.503</span></span>
+<span><span class="co">#&gt; [41] 9026.936 9004.425 8981.970 8959.571 8937.228 8914.941 8892.709 8870.533</span></span>
+<span><span class="co">#&gt; [49] 8848.412 8826.346 8804.335 8782.379 8760.478 8738.631 8716.839 8695.101</span></span>
+<span><span class="co">#&gt; [57] 8673.418 8651.788 8630.213 8608.691</span></span></code></pre></div>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>
