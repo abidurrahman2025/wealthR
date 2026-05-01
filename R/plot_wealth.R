@@ -2,7 +2,7 @@
 #'
 #' Generates a line plot with a shaded area representing wealth growth over time.
 #'
-#' @param data Numeric vector. The wealth values to plot (indexed by month).
+#' @param data Numeric vector. The series of monthly balances (usually from calc_wealth).
 #' @param title String. The main title of the plot.
 #' @return A plot object (base R graphics).
 #' @importFrom grDevices rgb

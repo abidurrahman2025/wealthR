@@ -3,11 +3,11 @@
 # Calculates the monthly balance of an investment account using compound interest
 # and regular monthly contributions (Ordinary Annuity).
 #
-#' @param principal Numeric. The starting balance of the account.
-#' @param monthly Numeric. The amount contributed at the end of each month.
+#' @param principal Numeric. Your starting balance (how much money you have now)
+#' @param monthly Numeric. The amount you plan to save/add every month.
 #' @param rate Numeric. The annual nominal interest rate (as a decimal, e.g., 0.05 for 5 parcent).
-#' @param years Numeric. The number of years to project.
-#' @return A numeric vector representing the account balance at each month.
+#' @param years Numeric. How many years into the future you want to project.
+#' @return A list of monthly balances over the specified time.
 #' @export
 calc_wealth <- function(principal, monthly, rate, years) {
   if (rate < 0) stop("Rate must be non-negative.")

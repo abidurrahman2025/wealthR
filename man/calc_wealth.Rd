@@ -7,16 +7,16 @@
 calc_wealth(principal, monthly, rate, years)
 }
 \arguments{
-\item{principal}{Numeric. The starting balance of the account.}
+\item{principal}{Numeric. Your starting balance (how much money you have now)}
 
-\item{monthly}{Numeric. The amount contributed at the end of each month.}
+\item{monthly}{Numeric. The amount you plan to save/add every month.}
 
 \item{rate}{Numeric. The annual nominal interest rate (as a decimal, e.g., 0.05 for 5 parcent).}
 
-\item{years}{Numeric. The number of years to project.}
+\item{years}{Numeric. How many years into the future you want to project.}
 }
 \value{
-A numeric vector representing the account balance at each month.
+A list of monthly balances over the specified time.
 }
 \description{
 Calculate Wealth Trajectory

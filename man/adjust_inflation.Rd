@@ -7,14 +7,14 @@
 adjust_inflation(amounts, inflation_rate)
 }
 \arguments{
-\item{amounts}{Numeric vector. The nominal values to be adjusted.}
+\item{amounts}{Numeric vector. The list of future money values you want to adjust}
 
 \item{inflation_rate}{Numeric. The annual inflation rate (as a decimal).}
 }
 \value{
-A numeric vector of inflation-adjusted values.
+A list of values showing what that money is worth in today's economy.
 }
 \description{
-Discounts a vector of future nominal values to their present value (purchasing power)
-based on a monthly inflation rate.
+Converts future dollar amounts into "today's dollars" to show their
+actual purchasing power.
 }

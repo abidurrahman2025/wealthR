@@ -7,7 +7,7 @@
 plot_wealth(data, title = "Wealth Projection")
 }
 \arguments{
-\item{data}{Numeric vector. The wealth values to plot (indexed by month).}
+\item{data}{Numeric vector. The series of monthly balances (usually from calc_wealth).}
 
 \item{title}{String. The main title of the plot.}
 }
